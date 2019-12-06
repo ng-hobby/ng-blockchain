@@ -1,0 +1,77 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <b>Crypto Wallet</b>
+    </span>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span>Balance: {{balance}}</span>
+    <span class="crypto-spacer"></span>
+    <mat-icon class="crypto-icon">account_circle</mat-icon>
+    <mat-icon class="crypto-icon" (click)="getCurrentBalance()">account_balance</mat-icon>
+    <span></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div>
+  <mat-card class="mat-elevation-z8 mat-card-style">
+    <mat-card-title>Access a Wallet by Address</mat-card-title>
+    <mat-card-subtitle>Enter the wallet address</mat-card-subtitle>
+    <mat-card-content>
+      <!-- <form [formGroup]="walletAdressForm" autocomplete="off" novalidate> -->
+      <form autocomplete="off" novalidate>
+        <!-- <div>
+          <input mat-input placeholder="Wallet Adress" fromControlName="walletAdress" required>
+        </div> -->
+        <mat-form-field>
+          <input matInput [(ngModel)]="walletAdressForm" placeholder="Wallet Adress" name="walletAdress">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="assignWalletAddress()">
+        <mat-icon aria-label="assign a wallet address">account_circle</mat-icon>Assign
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div>
+  <mat-card class="mat-elevation-z8 mat-card-style">
+    <mat-card-title>Send Coin</mat-card-title>
+    <mat-card-subtitle>Enter the Reciver's wallet address & the coin amount</mat-card-subtitle>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="reciverWallet" name="reciverWallet" placeholder="Reciver wallet address">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="reciverCoin" name="reciverCoin" placeholder="Coin amount">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="sendTransaction()">
+        <mat-icon>file_upload</mat-icon>Send
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+  <h2>Here is our blockchain:</h2>
+  <div class="blockchain-text">{{ blockChain }}</div>
+</div>
+<div>
+  <h2>Blockchain State:</h2>
+  <div *ngIf="state; else invalidChain">
+    chain is in a <b>Valid</b> state.
+  </div>
+  <ng-template #invalidChain>
+    chain is in a <b>Invalid</b> state.
+  </ng-template>
+</div>
+ -->

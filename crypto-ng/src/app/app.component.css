@@ -1,0 +1,19 @@
+.blockchain-text {
+	overflow-wrap: break-word;
+	text-align: left;
+}
+
+.crypto-spacer {
+	flex: 1 1 auto;
+}
+
+.crypto-icon {
+	padding: 0 14px;
+	cursor: pointer;
+}
+
+.mat-card-style {
+	flex: 1;
+	margin: 3vh 0;
+}
+
